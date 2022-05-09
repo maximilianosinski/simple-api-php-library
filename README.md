@@ -1,3 +1,12 @@
+# Installation
+
+1. Clone this Repository in your PHP Project
+2. Change your Project name (The name of your Project's Directory [not the full path]) and your Domain.
+
+```cmd
+git clone https://github.com/maximilianosinski/simple-api-php-library.git
+```
+
 ### Features
 
 - Can make HTTP/S responses with custom parameters.
