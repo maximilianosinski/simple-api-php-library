@@ -16,8 +16,11 @@ Just add the lib/config.php to any PHP function or script you have.
 My Library supports:
 
  - HTTP/S Responses.
+ - HTTP/S Requests (GET, POST and more).
  - Custom Function Returns.
  - Easy File System functions.
+ - Translation.
+ - Request/User Information (IP, UserAgent, IP GeoLocation).
 
 # Example
 
