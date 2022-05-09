@@ -27,6 +27,6 @@ My Library supports:
 ## FileSystem
     <?php
     include "lib/config.php";
-    $Result = FileSystem::WriteContent("my/local/file.txt", "Hello World!";
+    $Result = FileSystem::WriteContent("my/local/file.txt", "Hello World!");
     Responses::ResponseByReturn($Result);
     ?>
