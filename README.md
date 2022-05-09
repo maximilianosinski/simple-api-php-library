@@ -1,10 +1,13 @@
 # Installation
 
 1. Clone this Repository in your PHP Project
-2. Change your Project name (The name of your Project's Directory [not the full path]) and your Domain.
-
 ```cmd
 git clone https://github.com/maximilianosinski/simple-api-php-library.git
+```
+2. Change your Project name (The name of your Project's Directory [not the full path]) and your Domain.
+3. Include "lib/config.php" in every PHP file you have, where you wan't to use the functions: 
+```php
+include "lib/config.php";
 ```
 
 ### Features
@@ -58,7 +61,7 @@ Translating a custom Text.
 ```php
 <?php
 $Translate = Typography::Translate("How are you doing?", "de");
-if($Translate[0]){
+if($Translate["success"]){
 	$TranslatedText = $Translate["data"];
 	echo $TranslatedText;
 }
@@ -71,7 +74,7 @@ Example
 ```php
 <?php
 $Translate = Typography::Translate("How are you doing?", "de");
-if($Translate[0]){
+if($Translate["success"]){
 	$TranslatedText = $Translate["data"];
 	echo $TranslatedText;
 } else {return $Translate;}
@@ -84,7 +87,7 @@ Example
 ```php
 <?php
 $Translate = Typography::Translate("How are you doing?", "de");
-if($Translate[0]){
+if($Translate["success"]){
 	$TranslatedText = $Translate["data"];
 	Responses::ResponseByReturn($Translate);
 } else {Responses::ResponseByReturn($Translate);}
