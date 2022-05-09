@@ -61,6 +61,52 @@ class Responses{
             )
         ), JSON_PRETTY_PRINT);
     }
+    public static function ResponseByReturnTranslated($Return, $TargetLanguageCode){
+        $Status = $Return["status"];
+        $Code = $Return["code"];
+        $Message = $Return["message"];
+        $Translate = Typography::Translate($Message, $TargetLanguageCode);
+        if($Translate["success"]){
+            $Message = $Translate["data"];
+        }
+        $Data = $Return["data"];
+        $InvalidParameter = $Return["invalidParameter"];
+        header("HTTP/1.1 $Status");
+        echo json_encode(array
+        (
+            "response" => array
+            (
+                "status" => $Status,
+                "code" => $Code,
+                "message" => $Message,
+                "data" => $Data,
+                "invalidParameter" => $InvalidParameter
+            )
+        ), JSON_PRETTY_PRINT);
+    }
+    public static function ResponseByReturnAutoTranslated($Return){
+        $Status = $Return["status"];
+        $Code = $Return["code"];
+        $Message = $Return["message"];
+        $AutoTranslate = Typography::AutoTranslate($Message);
+        if($AutoTranslate["success"]){
+            $Message = $AutoTranslate["data"];
+        }
+        $Data = $Return["data"];
+        $InvalidParameter = $Return["invalidParameter"];
+        header("HTTP/1.1 $Status");
+        echo json_encode(array
+        (
+            "response" => array
+            (
+                "status" => $Status,
+                "code" => $Code,
+                "message" => $Message,
+                "data" => $Data,
+                "invalidParameter" => $InvalidParameter
+            )
+        ), JSON_PRETTY_PRINT);
+    }
 }
 class Requests{
     public static function Get($URL, $Data){
